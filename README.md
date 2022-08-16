@@ -48,8 +48,8 @@ To look at the sites either change and use the ingress or create a port-forward 
 ### Port-forwarding to the services
 
 ```
-kubectl port-forward -n k8s-platform service/cpu-throttling-limited 8080:80
-kubectl port-forward -n k8s-platform service/cpu-throttling-limitless 8081:80
+kubectl port-forward -n k8s-platform service/cpu-throttling-limited 8080:80 &
+kubectl port-forward -n k8s-platform service/cpu-throttling-limitless 8081:80 &
 ```
 
 Now you can point your browser to http://localhost:8080/ and http://localhost:8081/ to view the results.

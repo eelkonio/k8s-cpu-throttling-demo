@@ -1,0 +1,33 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cpu-throttling-limited
+  namespace: k8s-platform
+  labels:
+    app.kubernetes.io/name: cpu-throttling-limited
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cpu-throttling-limited
+  template:
+    metadata:
+      labels:
+        app: cpu-throttling-limited
+    spec:
+      #securityContext:
+      #  runAsUser: 1000
+      #  runAsGroup: 1000
+      containers:
+      - name: cpu-throttling-limited
+        image: harbor.np4.aws.local/k8s/cpu-throttling-demo:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources:
+          limits:
+            cpu: 100m
+          requests:
+            cpu: 100m

@@ -1,0 +1,19 @@
+---
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cpu-throttling-limitless
+  namespace: k8s-platform
+spec:
+  ingressClassName: nginx-platform
+  rules:
+  - host: cpu-throttling-limitless.np18.aws.local
+    http:
+      paths:
+      - path: /
+        pathType: ImplementationSpecific
+        backend:
+          service:
+            name: cpu-throttling-limitless
+            port:
+              number: 80

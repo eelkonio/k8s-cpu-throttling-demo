@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cpu-throttling-limited
+  namespace: k8s-platform
+spec:
+  selector:
+    app: cpu-throttling-limited
+  ports:
+  - name: http
+    protocol: "TCP"
+    port: 80
+    targetPort: 80
+  type: ClusterIP

@@ -1,0 +1,12 @@
+---
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+resources:
+- namespace.yaml
+- limited-deployment.yaml
+- limited-service.yaml
+- limited-ingress.yaml
+- limitless-deployment.yaml
+- limitless-service.yaml
+- limitless-ingress.yaml

@@ -37,8 +37,28 @@ On the right you can see the limited pod being throttled. The large timing diffe
 ![cpu throttling example output](images/cpu-throttling-demo-results.png)
 
 
-## URLs
-After deployment of this setup, you can see the results here:
+## Deploying
+
+To deploy, run:
+
+```kubectl apply -k kustomize```
+
+To look at the sites either change and use the ingress or create a port-forward to the services.
+
+### Port-forwarding to the services
+
+```
+kubectl port-forward -n k8s-platform service/cpu-throttling-limited 8080:80
+kubectl port-forward -n k8s-platform service/cpu-throttling-limitless 8081:80
+```
+
+Now you can point your browser to http://localhost:8080/ and http://localhost:8081/ to view the results.
+
+### Using the ingress
+
+First, change the ingresses in kustomize/limit*-ingress.yaml to match your domain
+
+After deployment of this setup using the ingress, you can see the results here:
 
 - http://cpu-throttling-limited.YOURDOMAIN/
 - http://cpu-throttling-limitless.YOURDOMAIN/

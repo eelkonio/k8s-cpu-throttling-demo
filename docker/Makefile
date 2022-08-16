@@ -1,7 +1,7 @@
 build:
-	docker build . -t harbor.np4.aws.local/k8s/cpu-throttling-demo
+	docker build . -t yourfavorite-container-image-repo/cpu-throttling-demo
 
 push:
-	docker push harbor.np4.aws.local/k8s/cpu-throttling-demo
+	docker push yourfavorite-container-image-repo/cpu-throttling-demo
 
 all: build push

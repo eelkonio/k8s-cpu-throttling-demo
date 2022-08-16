@@ -7,7 +7,7 @@ metadata:
 spec:
   ingressClassName: nginx-platform
   rules:
-  - host: cpu-throttling-limited.np18.aws.local
+  - host: cpu-throttling-limited.yourdomain
     http:
       paths:
       - path: /

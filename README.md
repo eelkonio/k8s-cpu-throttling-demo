@@ -4,7 +4,7 @@ This demo will show how response times will become significantly longer when you
 
 ## Background story
 
-We at de Volksbank have been adding memory and cpu requests and limits to as much pods as we could, to ensure viability of all resources.
+People have been adding memory and cpu requests and limits to as much pods as we could, to ensure viability of all resources.
 
 This however turns out to create a problem. CPU limits are not intuitively understandable ceilings to which a pod may grow. CPU limits do something else than what you would expect and they will seriously cripple the performance of your pods if used unwisely. Best practice is to never use cpu limits.
 
@@ -40,8 +40,8 @@ On the right you can see the limited pod being throttled. The large timing diffe
 ## URLs
 After deployment of this setup, you can see the results here:
 
-- http://cpu-throttling-limited.np18.aws.local/
-- http://cpu-throttling-limitless.np18.aws.local/
+- http://cpu-throttling-limited.YOURDOMAIN/
+- http://cpu-throttling-limitless.YOURDOMAIN/
 
 ## See also
 

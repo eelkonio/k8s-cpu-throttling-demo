@@ -21,7 +21,7 @@ spec:
       #  runAsGroup: 1000
       containers:
       - name: cpu-throttling-limited
-        image: harbor.np4.aws.local/k8s/cpu-throttling-demo:latest
+        image: yourfavorite-container-image-repo/cpu-throttling-demo:latest
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
